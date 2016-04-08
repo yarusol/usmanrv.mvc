@@ -1,9 +1,32 @@
-﻿@{
+﻿@model usmanrv.mvc.Models.Employee
+@{
     ViewBag.Title = "Тестове завдання";
 	ViewBag.Meta_Keywords = "asp.net,button,employee,javascript,sql,table,завдання,працівник,професія,прізвище,таблиця,тест,тестове,форма,ім’я";
 	ViewBag.Meta_Description = "Ця сторінка - виконане тестове завдання. На ній розташована форма з полями: прізвище, ім’я, професія. Нижче - таблиця (table) з працівниками. Працівник (employee) додається до таблиці двома кнопками (button) - з використанням ASP.NET та JavaScript. Також сторінка містить приклад SQL-запиту.";
+	ViewBag.PageStyleFile = @"/Content/index-page.css";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
-
+<div>
+	@using ( Html.BeginForm() )
+	{
+		<fieldset>
+			<legend>Новий працівник (employee)</legend>
+			<p><span class="left-column">Ім’я : </span>@Html.TextBoxFor( m => m.Name )</p>
+			<p><span class="left-column">Прізвище : </span>@Html.TextBoxFor( m => m.Surname )</p>
+			<p><span class="left-column">Вік : </span>@Html.TextBoxFor( m => m.Age )</p>
+			<p><span class="left-column">Професія : </span>@Html.TextBoxFor( m => m.Profession )</p>
+			<p class="centered" style="margin: 30px 0 10px 0;">
+				<button type="button" class="centered">
+					Відправити<br />(javascript)
+				</button>
+				<span style="display:inline-block; width:80px;"> </span>
+				<button type="submit" class="centered">
+					Відправити<br />(Asp.Net)
+				</button>
+			</p>
+		</fieldset>
+		@Html.ValidationSummary()
+	}
+</div>

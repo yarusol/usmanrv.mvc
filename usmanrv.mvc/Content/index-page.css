@@ -1,0 +1,29 @@
+﻿body {
+	background-color: #ffd800;
+	font-family: Arial, sans-serif;
+}
+
+.centered{
+	text-align: center;
+}
+
+
+form{
+	width: 350px;
+	margin:auto;
+	background-color: cyan;
+	border-radius: 10px;
+	padding-bottom: 1px;
+}
+
+fieldset{
+	border-radius: 5px;
+	margin: 5px;
+}
+
+form .left-column{
+	display: inline-block;
+	width: 120px;
+	text-align: right;
+	margin-right: 15px;
+}
