@@ -1,6 +1,6 @@
 ﻿@model usmanrv.mvc.Models.Employee
 @{
-    ViewBag.Title = "Тестове завдання";
+	ViewBag.Title = "Тестове завдання";
 	ViewBag.Meta_Keywords = "asp.net,button,employee,javascript,sql,table,завдання,працівник,професія,прізвище,таблиця,тест,тестове,форма,ім’я";
 	ViewBag.Meta_Description = "Ця сторінка - виконане тестове завдання. На ній розташована форма з полями: прізвище, ім’я, професія. Нижче - таблиця (table) з працівниками. Працівник (employee) додається до таблиці двома кнопками (button) - з використанням ASP.NET та JavaScript. Також сторінка містить приклад SQL-запиту.";
 	ViewBag.PageStyleFile = @"/Content/index-page.css";
@@ -11,6 +11,7 @@
 <div>
 	@using ( Html.BeginForm() )
 	{
+		@Html.ValidationSummary()
 		<fieldset>
 			<legend>Новий працівник (employee)</legend>
 			<p><span class="left-column">Ім’я : </span>@Html.TextBoxFor( m => m.Name )</p>
@@ -27,6 +28,5 @@
 				</button>
 			</p>
 		</fieldset>
-		@Html.ValidationSummary()
 	}
 </div>
