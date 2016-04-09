@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace usmanrv.mvc.Models
 {
-	public class Employee
+	public class EmployeeModel
 	{
 		[Required( AllowEmptyStrings = false, ErrorMessage = "Обов’язково потрібно ввести ім’я" )]
 		public string Name { get; set; }

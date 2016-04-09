@@ -1,9 +1,10 @@
-﻿@model usmanrv.mvc.Models.Employee
+﻿@model usmanrv.mvc.Models.EmployeeModel
 @{
 	ViewBag.Title = "Тестове завдання";
 	ViewBag.Meta_Keywords = "asp.net,button,employee,javascript,sql,table,завдання,працівник,професія,прізвище,таблиця,тест,тестове,форма,ім’я";
 	ViewBag.Meta_Description = "Ця сторінка - виконане тестове завдання. На ній розташована форма з полями: прізвище, ім’я, професія. Нижче - таблиця (table) з працівниками. Працівник (employee) додається до таблиці двома кнопками (button) - з використанням ASP.NET та JavaScript. Також сторінка містить приклад SQL-запиту.";
 	ViewBag.PageStyleFile = @"/Content/index-page.css";
+	List<usmanrv.mvc.Models.EmployeeModel> employees = ViewBag.Employees as List<usmanrv.mvc.Models.EmployeeModel>;
 }
 
 <h2>@ViewBag.Title</h2>
@@ -28,5 +29,34 @@
 				</button>
 			</p>
 		</fieldset>
+	}
+
+	@if ( employees != null && employees.Count > 0 )
+	{
+	<div title="нижче div, в який вставити результати відправленого у форматі таблиці">
+		<h4>Зареєстровані працівники</h4>
+		<table id="registered">
+			<thead>
+				<tr>
+					<th>Ім’я</th>
+					<th>Прізвище</th>
+					<th>Вік</th>
+					<th>Професія</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach ( var e in employees )
+				{
+					<tr>
+						<td>@e.Name</td>
+						<td>@e.Surname</td>
+						<td class="centered">@e.Age</td>
+						<td>@e.Profession</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+
 	}
 </div>

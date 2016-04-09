@@ -1,40 +1,41 @@
 ﻿body {
-	background-color: #ffd800;
+	background-color: #fd0;
 	font-family: Arial, sans-serif;
 }
 
-.centered{
+.centered, 
+h1, h2, h3, h4 {
 	text-align: center;
 }
 
 
-form{
+form {
 	position: relative;
 	width: 350px;
-	margin:auto;
+	margin: auto;
 	background-color: cyan;
 	border: 1px solid blue;
 	border-radius: 10px;
 	padding-bottom: 1px;
 }
 
-fieldset{
+fieldset {
 	border-radius: 5px;
 	margin: 5px;
 }
 
-form .left-column{
+form .left-column {
 	display: inline-block;
 	width: 120px;
 	text-align: right;
 	margin-right: 15px;
 }
 
-.validation-summary-valid{
+.validation-summary-valid {
 	display: none;
 }
 
-.validation-summary-errors{
+.validation-summary-errors {
 	display: block;
 	width: inherit;
 	border-radius: 10px;
@@ -44,15 +45,48 @@ form .left-column{
 	left: 50px;
 	border: 2px solid red;
 	color: maroon;
-	font-weight:600;
+	font-weight: 600;
 	/*box-shadow: 10px 10px 20px #f55;*/
 }
-.validation-summary-errors ul{
-	list-style: none;
-	margin: 0;
-	padding: 5px 5px 5px 20px;
-}
 
-.input-validation-error{
+	.validation-summary-errors ul {
+		list-style: none;
+		margin: 0;
+		padding: 5px 5px 5px 20px;
+	}
+
+.input-validation-error {
 	background: #faa;
 }
+
+table#registered {
+	border: 2px solid black;
+	border-collapse: collapse;
+	margin: auto;
+}
+
+	table#registered thead {
+		border: 2px solid black;
+	}
+
+	table#registered td,
+	table#registered th {
+		border: 1px solid black;
+		padding: 0 5px;
+	}
+
+	table#registered th {
+		text-align: center;
+	}
+
+	table#registered thead {
+		background-color: #aee;
+	}
+
+	table#registered tbody tr:nth-child(2n+1) {
+		background-color: #fc0;
+	}
+
+	table#registered tbody tr:nth-child(2n) {
+		background-color: #fe0;
+	}

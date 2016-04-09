@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "usmanrv.mvc", "usmanrv.mvc\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "usmanrv.mvc.Tests", "usmanrv.mvc.Tests\usmanrv.mvc.Tests.csproj", "{7D7D3A67-DAFD-4F25-859B-EC85FB62F563}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "usmanrv.mvc.Domain", "Domain\usmanrv.mvc.Domain.csproj", "{ADF47FA7-70FB-4B51-9780-78B16B0F5CCF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7D7D3A67-DAFD-4F25-859B-EC85FB62F563}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D7D3A67-DAFD-4F25-859B-EC85FB62F563}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D7D3A67-DAFD-4F25-859B-EC85FB62F563}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADF47FA7-70FB-4B51-9780-78B16B0F5CCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADF47FA7-70FB-4B51-9780-78B16B0F5CCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADF47FA7-70FB-4B51-9780-78B16B0F5CCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADF47FA7-70FB-4B51-9780-78B16B0F5CCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
