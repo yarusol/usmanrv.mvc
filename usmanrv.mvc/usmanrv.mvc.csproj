@@ -125,6 +125,7 @@
     <Content Include="App_Data\database_log.ldf" />
     <Content Include="Content\index-page.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Pages\Home\add-employee.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
