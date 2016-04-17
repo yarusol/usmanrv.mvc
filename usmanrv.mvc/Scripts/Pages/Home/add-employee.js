@@ -45,12 +45,14 @@
 			}
 
 			var form = document.getElementById( "employeeForm" );
-			validateForm( form );
+			if( true !== validateForm( form ) ){
+				alert("Помилки валідації");
+			}
 
 			return;
 
 			function validateForm( form ) {
-
+				var isValid = true;
 				var validationErrorsDiv = null;
 				var validableInputs = null;
 				if ( !initializeVariables() ) {
@@ -60,7 +62,7 @@
 				emptyValidationErrorsDiv();
 				validableInputs.forEach( validateInput );
 
-				return;
+				return isValid;
 
 
 				function initializeVariables() {
@@ -194,6 +196,7 @@
 							errorsUL.appendChild( errorLI );
 							validationErrorsDiv.classList.add( "validation-summary-errors" );
 							validationErrorsDiv.classList.remove( "validation-summary-valid" );
+							isValid = false;
 						}
 					}// function validateByAttribute( attributeName )
 				}
