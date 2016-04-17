@@ -35,18 +35,30 @@
 				return;
 			}
 
-			var newRow = table.insertRow();
-			var oldRow = table.rows[newRow.rowIndex - 1];
-
-			for ( var i = 0; i < oldRow.cells.length ; i++ ) {
-				var cell = newRow.insertCell();
-				cell.setAttribute( "class", oldRow.cells[i].getAttribute( "class" ) );
-				cell.innerHTML = i;
-			}
-
 			var form = document.getElementById( "employeeForm" );
-			if( true !== validateForm( form ) ){
-				alert("Помилки валідації");
+			form.getInputValueByName = getInputValueByName;
+			if ( true === validateForm( form ) ) {
+				var newRow = table.insertRow();
+				var oldRow = table.rows[newRow.rowIndex - 1];
+
+				for ( var i = 0; i < oldRow.cells.length ; i++ ) {
+					var cell = newRow.insertCell();
+					cell.setAttribute( "class", oldRow.cells[i].getAttribute( "class" ) );
+					switch ( i ) {
+						case 0:
+							cell.innerHTML = form.getInputValueByName("Name");
+							break;
+						case 1:
+							cell.innerHTML = form.getInputValueByName( "Surname" );
+							break;
+						case 2:
+							cell.innerHTML = form.getInputValueByName( "Age" );
+							break;
+						case 3:
+							cell.innerHTML = form.getInputValueByName( "Profession" );
+							break;
+					}
+				}
 			}
 
 			return;
@@ -200,7 +212,22 @@
 						}
 					}// function validateByAttribute( attributeName )
 				}
-			}
+			}// function validateForm( form )
+			function getInputValueByName( name ) {
+				if ( this === undefined || this.tagName === undefined || this.tagName !== "FORM" ) {
+					return "";
+				}
+
+				var elements = document.getElementsByName( name );
+				for ( var i = 0 ; i < elements.length ; i++ ) {
+					var element = elements[i];
+					if ( element.form !== undefined && element.form === form ) {
+						return element.value;
+					}
+				}
+				return "";
+			}// function getInputValueByName()
+
 		}// function sendByJS()
 
 
